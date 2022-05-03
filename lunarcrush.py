@@ -20,7 +20,7 @@ SLEEP_TIME = 0.2
 # ====== Setup date and time ===========
 # Date
 generation_date = datetime.datetime.now()
-generation_date = generation_date.strftime("%d_%m_%y")
+generation_date = generation_date.strftime("%d_%m_%Y")
 
 
 # Time now

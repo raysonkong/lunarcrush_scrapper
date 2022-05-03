@@ -5,7 +5,7 @@ import datetime
 import time
 from config import *
 
-
+SLEEP_TIME = 0.2 
 # URL = 'https://api2.lunarcrush.com/v2?data=market&type=fast'
 # HOW_MANY_COINS = 100
 # GROUP_SIZE = 400
@@ -88,7 +88,7 @@ def symbol_to_tradingview(symbol):
             one_symbol_watchlist.append(f"{exchange}:{symbol}{currency}")
     return one_symbol_watchlist
 
-symbol_to_tradingview('ADA')
+#symbol_to_tradingview('ADA')
 
 
 #================================================
@@ -126,7 +126,7 @@ def group_into_n(data_list, n):
 
 grouped_pairs = group_into_n(tradingview_pairs, n)
 
-print(grouped_pairs)
+#print(grouped_pairs)
 
 #================================================
 # Step 5 #
@@ -151,6 +151,30 @@ def output_to_text_file(nested_grouped_pairs):
                 for pair in group:
                   f.write("%s,\n" % pair)
 
-output_to_text_file(grouped_pairs)
 
+
+def run_srapper():
+    os.system('clear')
+    print("================ Getting Data =======================")
+    print("\n")
+    output_to_text_file(grouped_pairs)
+
+    time.sleep(SLEEP_TIME)
+    print("Requesting Data from LunarCrush...")
+    time.sleep(SLEEP_TIME)
+    print("...")
+    time.sleep(SLEEP_TIME)
+    print("Parsing Data...")
+    print("...")
+    time.sleep(SLEEP_TIME)
+    print("Outputting Data to files...")
+    time.sleep(SLEEP_TIME)
+    print("....")
+    print("Latest Quote Files are created Successfully!")
+    print("\n")
+
+    print("================= Scrapping Completed ================")
+
+if __name__ =='__main__':
+    run_srapper()
 
